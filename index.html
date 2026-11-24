@@ -7,7 +7,7 @@
   <meta name="description" content="The Final Gift: A Spirituality of Estate Gift Planning, a new book by Phil Brach. Estate planning is a final testament of faith.">
   <!-- Draft mockup: keep out of search results until launch -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f4ecdf">
+  <meta name="theme-color" content="#f7f4ee">
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Final Gift · A new book by Phil Brach">
   <meta property="og:description" content="Estate planning is a final testament of faith. Available February 16, 2027 from Sophia Institute Press.">
@@ -15,436 +15,208 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Manrope:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..800;1,8..60,300..800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/cover.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
 
-  <!-- Shared SVG symbols -->
-  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
-    <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11m-4.5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-gift" viewBox="0 0 100 100">
-      <rect x="14" y="40" width="72" height="50" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <rect x="9" y="28" width="82" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <rect x="44" y="28" width="12" height="62" style="fill: var(--gift-ribbon, currentColor)"/>
-      <path d="M50 28c-6-12-22-20-27-12-4 7 12 12 27 12Zm0 0c6-12 22-20 27-12 4 7-12 12-27 12Z" style="fill: var(--gift-ribbon, currentColor)"/>
-    </symbol>
-  </svg>
-
   <!-- ============ HEADER ============ -->
   <header class="site-header" data-header>
-    <div class="header__bar">
-      <a href="#top" class="brand" aria-label="Phil Brach, home">
-        <span class="brand__mark" aria-hidden="true">PB</span>
-        <span class="brand__name">Phil Brach</span>
-      </a>
+    <div class="wrap header__bar">
+      <a href="#top" class="wordmark" aria-label="Phil Brach, home">Phil Brach</a>
 
       <nav class="nav" aria-label="Main">
         <ul class="nav__list">
-          <li class="nav__item has-sub">
-            <a href="#book" class="nav__link">The Final Gift <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
-            <ul class="sub">
-              <li><a href="#book">The Book <small>Overview, inside, who it’s for</small></a></li>
-              <li><a href="#pledge">The Final Gift Pledge <small>Remember the Church in your plans</small></a></li>
-              <li><a href="#bulk">Bulk Orders &amp; Parish Resources <small>Copies for your community</small></a></li>
-            </ul>
-          </li>
-          <li class="nav__item"><a href="#pledge" class="nav__link">Take the Pledge</a></li>
-          <li class="nav__item"><a href="#work" class="nav__link">Work with Phil</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li><a href="#book">The Final Gift</a></li>
+          <li><a href="#pledge">The Pledge</a></li>
+          <li><a href="#parishes">Bulk Orders</a></li>
+          <li><a href="#work">Work with Phil</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="header__actions">
-        <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--gold btn--sm">Buy the Book <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <button type="button" class="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-          <span aria-hidden="true"></span><span aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="header__progress" aria-hidden="true"><span></span></div>
+      <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--line btn--sm header__cta">Buy the Book</a>
+
+      <button type="button" class="burger" aria-expanded="false" aria-controls="menu">
+        <span class="burger__label">Menu</span>
+      </button>
     </div>
-  </header>
 
-  <!-- Mobile menu -->
-  <div id="menu" class="menu" aria-hidden="true" inert>
-    <nav class="menu__inner" aria-label="Mobile">
-      <ol class="menu__list">
-        <li style="--i:0"><a href="#book"><span class="menu__num">01</span>The Final Gift</a></li>
-        <li style="--i:1"><a href="#pledge"><span class="menu__num">02</span>Take the Pledge</a></li>
-        <li style="--i:2"><a href="#bulk"><span class="menu__num">03</span>Bulk Orders</a></li>
-        <li style="--i:3"><a href="#work"><span class="menu__num">04</span>Work with Phil</a></li>
-        <li style="--i:4"><a href="#contact"><span class="menu__num">05</span>Contact</a></li>
-      </ol>
-      <div class="menu__foot" style="--i:5">
-        <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--gold btn--block">Preorder the Book <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <p>Available February 16, 2027</p>
-      </div>
+    <nav id="menu" class="menu" aria-label="Mobile" hidden>
+      <ul class="wrap menu__list">
+        <li><a href="#book">The Final Gift</a></li>
+        <li><a href="#pledge">The Pledge</a></li>
+        <li><a href="#parishes">Bulk Orders</a></li>
+        <li><a href="#work">Work with Phil</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--solid">Preorder the Book</a></li>
+      </ul>
     </nav>
-  </div>
-
-  <!-- The travelling book lives here on large screens (JS moves it in) -->
-  <div class="flyer" aria-hidden="true"></div>
+  </header>
 
   <main id="main">
     <!-- ============ HERO ============ -->
     <section id="top" class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <canvas class="hero__particles" aria-hidden="true"></canvas>
       <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow intro" style="--d:0"><span class="dot" aria-hidden="true"></span> A new book by Phil Brach</p>
-          <h1 id="hero-title" class="hero__title">
-            <span class="line"><span class="line__in" style="--d:1">Estate planning</span></span>
-            <span class="line"><span class="line__in" style="--d:2">is a final</span></span>
-            <span class="line"><span class="line__in" style="--d:3">testament</span></span>
-            <span class="line"><span class="line__in" style="--d:4">of <em>faith.</em></span></span>
-          </h1>
-          <p class="hero__lede intro" style="--d:4"><cite>The Final Gift: A Spirituality of Estate Gift Planning</cite>, a new book by Phil Brach.</p>
-          <div class="ctas intro" style="--d:5">
-            <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--plum">Preorder the Book <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a href="#pledge" class="btn btn--line-dark">Take the Pledge</a>
-          </div>
-          <div class="hero__info intro" style="--d:6">
-            <p class="countdown">
-              <span class="countdown__num" data-countdown>85</span>
-              <span class="countdown__label"><span data-countdown-unit>days</span> until release<br><strong>February 16, 2027</strong></span>
-            </p>
-            <ul class="hero__meta" aria-label="Book details">
-              <li class="sticker sticker--green" style="--r:-6deg">Paperback</li>
-              <li class="sticker sticker--gold" style="--r:4deg">$12.99</li>
-              <li class="sticker sticker--lilac" style="--r:-3deg">Sophia Institute Press</li>
-            </ul>
-          </div>
-          <p class="note">Primary button still to be decided. With the February 16, 2027 release, Preorder leads until then and Take the Pledge is second.</p>
-        </div>
+        <figure class="hero__book">
+          <img src="assets/cover.webp" width="800" height="1120" alt="Cover of The Final Gift: A Spirituality of Estate Gift Planning by Philip Louis Brach Jr., foreword by Timothy Cardinal Dolan">
+        </figure>
 
-        <div class="hero__stage">
-          <div class="hero__blob" aria-hidden="true"></div>
-          <svg class="stamp" viewBox="0 0 200 200" aria-hidden="true">
-            <defs><path id="stamp-path" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"/></defs>
-            <circle cx="100" cy="100" r="97" class="stamp__bg"/>
-            <text><textPath href="#stamp-path" textLength="430">FOREWORD BY CARDINAL DOLAN ✦ </textPath></text>
-            <path d="M100 76v48M84 94h32" class="stamp__cross"/>
-          </svg>
-          <div class="book-slot book-slot--hero intro-book" data-slot="hero" role="img" aria-label="Cover of The Final Gift: A Spirituality of Estate Gift Planning by Philip Louis Brach Jr., foreword by Timothy Cardinal Dolan">
-            <div class="book-rig" aria-hidden="true">
-              <div class="book-float">
-                <div class="book">
-                  <div class="book__cover">
-                    <div class="book__face book__front">
-                      <img src="assets/cover.webp" width="800" height="1120" alt="" decoding="async">
-                      <span class="book__sheen"></span>
-                    </div>
-                    <div class="book__face book__inside">
-                      <span class="inside__rule"></span>
-                      <span class="inside__small">Foreword by</span>
-                      <span class="inside__name">Timothy Cardinal Dolan</span>
-                      <span class="inside__rule"></span>
-                    </div>
-                  </div>
-                  <div class="book__face book__page">
-                    <p class="page__kicker">Inside</p>
-                    <ul class="page__list">
-                      <li>The first step to estate planning (it’s not what you think)</li>
-                      <li>An estate planning examination of conscience</li>
-                      <li>Nine prudent questions to help you prepare for the future</li>
-                      <li>Why merciful and just planning isn’t always about equality</li>
-                    </ul>
-                    <p class="page__folio">The Final Gift</p>
-                  </div>
-                  <div class="book__face book__back">
-                    <p class="back__quote">Estate planning is not primarily a financial exercise; it is a final testament of faith.</p>
-                    <p class="back__by">Phil Brach</p>
-                    <p class="back__pub">Sophia Institute Press</p>
-                  </div>
-                  <div class="book__face book__spine"><span>The Final Gift</span><span class="spine__by">Brach</span></div>
-                  <div class="book__face book__edge"></div>
-                  <div class="book__face book__top"></div>
-                </div>
-              </div>
-              <div class="book-shadow"></div>
-            </div>
+        <div class="hero__copy">
+          <h1 id="hero-title" class="hero__title">Estate planning is a final testament of faith.</h1>
+          <p class="hero__lede"><cite>The Final Gift: A Spirituality of Estate Gift Planning</cite>, a new book by Phil Brach, with a foreword by Timothy Cardinal Dolan.</p>
+          <div class="ctas">
+            <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--solid">Preorder the Book</a>
+            <a href="#pledge" class="btn btn--line">Take the Pledge</a>
           </div>
+          <p class="hero__meta">Available February 16, 2027 <span aria-hidden="true">·</span> Paperback <span aria-hidden="true">·</span> $12.99 <span aria-hidden="true">·</span> Sophia Institute Press</p>
+          <p class="note">Primary button still to be decided. With the February 16, 2027 release, Preorder leads until then and Take the Pledge is second.</p>
         </div>
       </div>
     </section>
 
-    <!-- Crossed gift ribbons -->
-    <div class="ribbons" aria-hidden="true">
-      <div class="ribbon ribbon--gold">
-        <div class="ribbon__track">
-          <span>Preorder now</span><i>✦</i><span>Available February 16, 2027</span><i>✦</i><span>Foreword by Cardinal Dolan</span><i>✦</i>
-          <span>Preorder now</span><i>✦</i><span>Available February 16, 2027</span><i>✦</i><span>Foreword by Cardinal Dolan</span><i>✦</i>
-        </div>
-      </div>
-      <div class="ribbon ribbon--green">
-        <div class="ribbon__track">
-          <em>Faith</em><i>✦</i><em>Gratitude</em><i>✦</i><em>Hope</em><i>✦</i><em>Stewardship</em><i>✦</i><em>Legacy</em><i>✦</i>
-          <em>Faith</em><i>✦</i><em>Gratitude</em><i>✦</i><em>Hope</em><i>✦</i><em>Stewardship</em><i>✦</i><em>Legacy</em><i>✦</i>
-        </div>
-      </div>
-    </div>
-
     <!-- ============ BLOCK 1 · THE IDEA IN BRIEF ============ -->
-    <section id="about" class="sec sec--paper about" aria-labelledby="about-title">
-      <div class="wrap about__grid">
-        <div class="about__copy">
-          <h2 id="about-title" class="eyebrow reveal">The idea in brief</h2>
-          <p class="about__lead" data-strike>
-            Estate planning may look like <span class="strike">paperwork<span class="strike__line" aria-hidden="true"></span></span>.
-            <span class="about__turn">It is also a chance to decide how the gifts God entrusted to us will keep serving our families, our neighbors, and His Church <em>after we are gone.</em></span>
-          </p>
-
-          <div class="deed reveal">
-            <p class="deed__intro">The Final Gift helps you see that planning as an expression of <strong>faith, gratitude, and hope</strong>:</p>
-            <ol class="deed__items">
-              <li class="reveal" style="--d:1"><span class="deed__num">Item I</span><span class="deed__text">A way to care for those you love.</span></li>
-              <li class="reveal" style="--d:2"><span class="deed__num">Item II</span><span class="deed__text">A way to express the values that guide your life.</span></li>
-              <li class="reveal" style="--d:3"><span class="deed__num">Item III</span><span class="deed__text">A way to support the ministries and causes closest to your heart.</span></li>
-            </ol>
-            <div class="deed__foot">
-              <div class="deed__sign">
-                <span class="deed__script">in faith, gratitude &amp; hope</span>
-                <span class="deed__caption">Signature</span>
-              </div>
-              <div class="seal" aria-hidden="true"><span>FG</span></div>
-            </div>
-          </div>
-        </div>
+    <section id="about" class="sec sec--white" aria-label="The idea in brief">
+      <div class="wrap measure">
+        <p class="lead">Estate planning may look like paperwork. It is also a chance to decide how the gifts God entrusted to us will keep serving our families, our neighbors, and His Church after we are gone.</p>
+        <p class="body-lg"><cite>The Final Gift</cite> helps you see that planning as an expression of faith, gratitude, and hope: a way to care for those you love, express the values that guide your life, and support the ministries and causes closest to your heart.</p>
       </div>
     </section>
 
     <!-- ============ BLOCK 2 · BOOK FEATURE ============ -->
-    <section id="book" class="sec sec--cream feature" aria-labelledby="book-title">
-      <div class="wrap feature__grid">
-        <div class="feature__stage">
-          <div class="arch" aria-hidden="true"></div>
-          <div class="book-slot book-slot--feature" data-slot="feature">
-            <div class="book-rig">
-              <div class="book-float">
-                <div class="book">
-                  <div class="book__cover">
-                    <div class="book__face book__front">
-                      <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy" decoding="async">
-                      <span class="book__sheen"></span>
-                    </div>
-                    <div class="book__face book__inside" aria-hidden="true">
-                      <span class="inside__rule"></span>
-                      <span class="inside__small">Foreword by</span>
-                      <span class="inside__name">Timothy Cardinal Dolan</span>
-                      <span class="inside__rule"></span>
-                    </div>
-                  </div>
-                  <div class="book__face book__page">
-                    <p class="page__kicker">Inside</p>
-                    <ul class="page__list">
-                      <li>The first step to estate planning (it’s not what you think)</li>
-                      <li>An estate planning examination of conscience</li>
-                      <li>Nine prudent questions to help you prepare for the future</li>
-                      <li>Why merciful and just planning isn’t always about equality</li>
-                    </ul>
-                    <p class="page__folio" aria-hidden="true">The Final Gift</p>
-                  </div>
-                  <div class="book__face book__back" aria-hidden="true">
-                    <p class="back__quote">Estate planning is not primarily a financial exercise; it is a final testament of faith.</p>
-                    <p class="back__by">Phil Brach</p>
-                    <p class="back__pub">Sophia Institute Press</p>
-                  </div>
-                  <div class="book__face book__spine" aria-hidden="true"><span>The Final Gift</span><span class="spine__by">Brach</span></div>
-                  <div class="book__face book__edge" aria-hidden="true"></div>
-                  <div class="book__face book__top" aria-hidden="true"></div>
-                </div>
-              </div>
-              <div class="book-shadow" aria-hidden="true"></div>
-            </div>
+    <section id="book" class="sec sec--warm" aria-labelledby="book-title">
+      <div class="wrap book__grid">
+        <div class="book__copy">
+          <h2 id="book-title" class="h2">The Final Gift</h2>
+          <p class="h2__sub">A Spirituality of Estate Gift Planning</p>
+          <p>This is not a how-to guide to writing an estate plan. It is a short, accessible book about why planning matters, written for families, parishes, and the people who serve them. Read it in one sitting, discuss it with a group, or keep it beside you as you work with an attorney and financial adviser.</p>
+          <div class="ctas">
+            <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--solid">Preorder the Book</a>
+            <a href="#book" class="btn btn--line">Learn More</a>
           </div>
-        </div>
-        <div class="feature__intro">
-          <p class="eyebrow reveal">The book</p>
-          <h2 id="book-title" class="h2 reveal">The Final Gift <span class="h2__sub">A Spirituality of Estate Gift Planning</span></h2>
-          <p class="feature__blurb reveal">This is not a how-to guide to writing an estate plan. It is a short, accessible book about why planning matters, written for families, parishes, and the people who serve them.</p>
-          <div class="ctas reveal">
-            <a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--plum">Preorder the Book <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a href="#book" class="btn btn--line-dark">Learn More</a>
-          </div>
-        </div>
-        <div class="feature__details">
-          <ul class="uses reveal" aria-label="Ways to use the book">
-            <li><span>01</span> Read it in one sitting</li>
-            <li><span>02</span> Discuss it with a group</li>
-            <li><span>03</span> Keep it beside you as you work with an attorney and financial adviser</li>
-          </ul>
-          <dl class="ticket reveal">
-            <div><dt>Release</dt><dd>Feb 16, 2027</dd></div>
-            <div><dt>Format</dt><dd>Paperback</dd></div>
-            <div><dt>Price</dt><dd>$12.99</dd></div>
+          <dl class="facts">
+            <div><dt>Available</dt><dd>February 16, 2027</dd></div>
+            <div><dt>Format</dt><dd>Paperback, $12.99</dd></div>
             <div><dt>Publisher</dt><dd>Sophia Institute Press</dd></div>
           </dl>
           <p class="note">“Learn More” will link to the full book page (Page 2). Page count not yet listed.</p>
         </div>
+
+        <aside class="contents" aria-labelledby="inside-title">
+          <h3 id="inside-title" class="contents__title">Inside the book</h3>
+          <ol class="contents__list">
+            <li>The first step to estate planning (it’s not what you think)</li>
+            <li>What Scripture, the Church, and spiritual authors say about the Four Last Things</li>
+            <li>An estate planning examination of conscience</li>
+            <li>Nine prudent questions to help you prepare for the future</li>
+            <li>Why merciful and just planning isn’t always about equality</li>
+          </ol>
+        </aside>
       </div>
     </section>
 
     <!-- ============ BLOCK 3 · PLEDGE ============ -->
-    <section id="pledge" class="sec pledge" aria-labelledby="pledge-title">
-      <div class="gifts" aria-hidden="true">
-        <svg class="gift" style="--x:6%;  --y:14%; --s:120px; --speed:1.2;  --r:-8deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:20%; --y:70%; --s:52px;  --speed:-.6;  --r:10deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:34%; --y:6%;  --s:30px;  --speed:.9;   --r:6deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:70%; --y:10%; --s:64px;  --speed:-1;   --r:-12deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:84%; --y:56%; --s:150px; --speed:.7;   --r:7deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:62%; --y:80%; --s:36px;  --speed:1.4;  --r:-4deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:4%;  --y:78%; --s:22px;  --speed:-1.3; --r:14deg"><use href="#i-gift"/></svg>
-        <svg class="gift" style="--x:93%; --y:6%;  --s:26px;  --speed:1;    --r:-9deg"><use href="#i-gift"/></svg>
-      </div>
-      <div class="wrap pledge__inner">
-        <p class="eyebrow eyebrow--green reveal">The Final Gift Pledge</p>
-        <h2 id="pledge-title" class="pledge__title reveal">Every Catholic has <em>something to give.</em></h2>
-        <p class="pledge__text reveal">The Final Gift Pledge invites you to remember the Church in your estate plans, <span class="hl">whatever the size of your gift.</span></p>
-        <div class="ctas ctas--center reveal">
-          <a href="#pledge" class="btn btn--gold">Take the Pledge <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <section id="pledge" class="sec sec--white" aria-labelledby="pledge-title">
+      <div class="wrap">
+        <div class="pledge">
+          <h2 id="pledge-title" class="pledge__title">The Final Gift Pledge</h2>
+          <p class="pledge__line">Every Catholic has something to give.</p>
+          <p class="pledge__text">The Final Gift Pledge invites you to remember the Church in your estate plans, whatever the size of your gift.</p>
+          <a href="#pledge" class="btn btn--light">Take the Pledge</a>
+          <p class="note note--light">Wording depends on how the pledge works, which Phil has not yet confirmed. A pledge counter or wall can live here later.</p>
         </div>
-        <p class="note note--light">Wording depends on how the pledge works, which Phil has not yet confirmed. A pledge counter or wall can live here later.</p>
       </div>
     </section>
 
     <!-- ============ BLOCK 4 · FOREWORD ============ -->
-    <section id="foreword" class="sec foreword" aria-labelledby="foreword-title">
-      <div class="wrap foreword__grid">
-        <div class="coins" aria-hidden="true">
-          <div class="coin coin--a">
-            <svg viewBox="0 0 120 120"><use href="#coin"/></svg>
-          </div>
-          <div class="coin coin--b">
-            <svg viewBox="0 0 120 120"><use href="#coin"/></svg>
-          </div>
-          <svg width="0" height="0" class="sr-only">
-            <defs>
-              <radialGradient id="coin-g" cx="38%" cy="32%" r="75%">
-                <stop offset="0" stop-color="#f3e2b0"/><stop offset=".55" stop-color="#c9a961"/><stop offset="1" stop-color="#8a6a2c"/>
-              </radialGradient>
-            </defs>
-            <symbol id="coin" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="57" fill="url(#coin-g)"/>
-              <circle cx="60" cy="60" r="48" fill="none" stroke="#7a5a22" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="1.5 4.2"/>
-              <circle cx="60" cy="60" r="40" fill="none" stroke="#7a5a22" stroke-opacity=".35"/>
-              <path d="M60 34v52M44 52h32" stroke="#6b4c1a" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
-            </symbol>
-          </svg>
-          <span class="coins__label">Two small coins · Mark 12:42</span>
-        </div>
+    <section id="foreword" class="sec sec--white quote-sec" aria-label="From the foreword">
+      <figure class="wrap measure quote">
+        <blockquote>
+          <p>“The widow’s mite has not been repealed.”</p>
+        </blockquote>
+        <figcaption>Timothy Cardinal Dolan <span>from the foreword to <cite>The Final Gift</cite></span></figcaption>
+        <p class="note">Pending Cardinal Dolan’s approval to use the line on the site. Other endorsements can be added here as they come in.</p>
+      </figure>
+    </section>
 
-        <figure class="foreword__fig">
-          <h2 id="foreword-title" class="eyebrow reveal">From the foreword</h2>
-          <blockquote class="scrub" data-scrub>
-            <p>The widow’s mite has not been repealed.</p>
-          </blockquote>
-          <figcaption class="foreword__cap reveal">
-            <span class="foreword__name">Timothy Cardinal Dolan</span>
-            <span class="foreword__src">from the foreword to <cite>The Final Gift</cite></span>
-          </figcaption>
-          <p class="note">Pending Cardinal Dolan’s approval to use the line on the site. Other endorsements can be added here as they come in.</p>
-        </figure>
+    <!-- ============ PARISHES · BULK ORDERS ============ -->
+    <section id="parishes" class="sec sec--warm" aria-labelledby="parishes-title">
+      <div class="wrap parishes__grid">
+        <div class="stack" aria-hidden="true">
+          <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
+          <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
+          <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
+        </div>
+        <div class="parishes__copy">
+          <h2 id="parishes-title" class="h2">Bring <cite>The Final Gift</cite> to your parish</h2>
+          <p>Many Catholic institutions encourage planned giving, yet few invite donors to reflect on the deeper spiritual meaning of legacy. Share the book with your community and begin that conversation together.</p>
+          <p>A resource for dioceses, parishes, Catholic schools and universities, hospitals, and charitable organizations, and for the pastors, development professionals, financial planners, and attorneys who serve them.</p>
+          <div class="ctas">
+            <a href="#parishes" class="btn btn--solid">Order Copies for Your Parish</a>
+          </div>
+          <p class="note">Links to the Bulk Orders &amp; Parish Resources page (pricing tiers, order form, discussion guide if produced).</p>
+        </div>
       </div>
     </section>
 
     <!-- ============ BLOCK 5 · WORK WITH PHIL ============ -->
-    <section id="work" class="sec sec--paper work" aria-labelledby="work-title">
+    <section id="work" class="sec sec--white" aria-labelledby="work-title">
       <div class="wrap work__grid">
-        <div class="portrait reveal" aria-hidden="true">
-          <div class="portrait__arch">
-            <span class="portrait__initials">PB</span>
-            <span class="portrait__cap">Portrait of Phil</span>
-          </div>
-          <svg class="badge" viewBox="0 0 200 200">
-            <defs><path id="badge-path" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
-            <circle cx="100" cy="100" r="96" class="badge__bg"/>
-            <text><textPath href="#badge-path" textLength="444">SPEAKER ✦ CONSULTANT ✦ AUTHOR ✦ </textPath></text>
-            <use href="#i-gift" x="76" y="74" width="48" height="48" class="badge__gift"/>
-          </svg>
+        <div class="portrait" role="img" aria-label="Author photograph forthcoming">
+          <span>Author photograph<br>forthcoming</span>
         </div>
-
         <div class="work__copy">
-          <p class="eyebrow reveal">Work with Phil</p>
-          <h2 id="work-title" class="h2 reveal">Bring Phil to your parish, diocese, school, or ministry.</h2>
-          <p class="reveal">Phil Brach is a Senior Partner at Partners in Mission and has spent more than two decades in Catholic advancement and nonprofit leadership. He helps Catholic organizations invite their communities into thoughtful, faith-filled giving.</p>
-          <ul class="tags reveal" aria-label="Services">
-            <li>Speaking</li><li>Consulting</li><li>Parish &amp; diocesan programs</li>
-          </ul>
-          <div class="ctas reveal">
-            <a href="#work" class="btn btn--plum">Work with Phil <svg class="btn__arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <h2 id="work-title" class="h2">Bring Phil to your parish, diocese, school, or ministry.</h2>
+          <p>Phil Brach is a Senior Partner at Partners in Mission and has spent more than two decades in Catholic advancement and nonprofit leadership. He helps Catholic organizations invite their communities into thoughtful, faith-filled giving.</p>
+          <div class="ctas">
+            <a href="#work" class="btn btn--solid">Work with Phil</a>
           </div>
+          <p class="note">Headshots are being taken; this frame is sized for a portrait photograph. Phil to confirm bio wording and the Partners in Mission affiliation.</p>
         </div>
       </div>
+    </section>
 
-      <ul class="wrap stats" aria-label="Phil at a glance">
-        <li class="stat reveal" style="--d:1"><span class="stat__num" data-count="20" data-suffix="+">20+</span><span class="stat__label">years in Catholic advancement and nonprofit leadership</span></li>
-        <li class="stat reveal" style="--d:2"><span class="stat__num" data-count="80" data-prefix="$" data-suffix="M">$80M</span><span class="stat__label">campaign he led to launch the Busch School of Business at Catholic University</span></li>
-        <li class="stat reveal" style="--d:3"><span class="stat__num" data-count="10">10</span><span class="stat__label">children, with his wife Liz, in Belmont, North Carolina</span></li>
-      </ul>
-      <p class="wrap note">Bio facts come from the Partners in Mission team page. Phil to confirm wording, current title, and whether the Partners in Mission affiliation should appear on his personal site.</p>
-
-      <div class="wrap duo">
-        <div id="bulk" class="card card--green reveal">
-          <p class="eyebrow eyebrow--green">For parishes &amp; groups</p>
-          <h3 class="card__title">Order copies for your parish</h3>
-          <p>Give the book to a parish, small group, or donor community.</p>
-          <a href="#bulk" class="link-arrow">Bulk Orders &amp; Parish Resources <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <!-- ============ EMAIL SIGNUP ============ -->
+    <section class="sec sec--warm signup-sec" aria-labelledby="signup-title">
+      <form id="signup" class="wrap measure signup" novalidate>
+        <h2 id="signup-title" class="signup__title">Stay in touch.</h2>
+        <p>Get updates on <cite>The Final Gift</cite> and the pledge.</p>
+        <div class="signup__field">
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="Your email address" autocomplete="email" aria-describedby="signup-msg">
+          <button type="submit" class="btn btn--solid">Sign Up</button>
         </div>
-
-        <form id="signup" class="card card--plum signup reveal" novalidate>
-          <p class="eyebrow eyebrow--gold">Newsletter</p>
-          <h3 class="card__title">Stay in touch.</h3>
-          <p>Get updates on The Final Gift and the pledge.</p>
-          <div class="signup__field">
-            <label for="email" class="sr-only">Email address</label>
-            <input id="email" name="email" type="email" required placeholder="Your email address" autocomplete="email" aria-describedby="signup-msg">
-            <button type="submit" class="btn btn--gold">Sign Up</button>
-          </div>
-          <p id="signup-msg" class="signup__msg" role="status" aria-live="polite"></p>
-        </form>
-      </div>
+        <p id="signup-msg" class="signup__msg" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <!-- ============ FOOTER ============ -->
   <footer id="contact" class="site-footer">
     <div class="wrap footer__grid">
-      <div class="footer__brand">
-        <a href="#top" class="brand" aria-label="Phil Brach, home"><span class="brand__mark" aria-hidden="true">PB</span><span class="brand__name">Phil Brach</span></a>
-        <p>Author of <cite>The Final Gift</cite>. Helping Catholics plan with gratitude and hope.</p>
+      <div>
+        <a href="#top" class="wordmark wordmark--footer" aria-label="Phil Brach, home">Phil Brach</a>
+        <p class="footer__tag">Author of <cite>The Final Gift</cite>.</p>
       </div>
       <nav aria-label="Footer">
-        <p class="footer__title">Explore</p>
         <ul class="footer__links">
-          <li><a href="#top">Home</a></li>
           <li><a href="#book">The Final Gift</a></li>
           <li><a href="#pledge">The Pledge</a></li>
-          <li><a href="#bulk">Bulk Orders</a></li>
+          <li><a href="#parishes">Bulk Orders</a></li>
           <li><a href="#work">Work with Phil</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div>
-        <p class="footer__title">Contact</p>
-        <ul class="footer__links">
-          <li><a href="#contact">Media &amp; speaking inquiries</a></li>
-          <li><a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener">Sophia Institute Press ↗</a></li>
-        </ul>
-        <ul class="socials" aria-label="Social media">
-          <li><a href="#contact" aria-label="LinkedIn (link pending)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm7 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.15-.02-2.64-1.6-2.64-1.62 0-1.86 1.26-1.86 2.56v4.92H10v-11Z"/></svg></a></li>
-          <li><a href="#contact" aria-label="Instagram (link pending)"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg></a></li>
-          <li><a href="#contact" aria-label="Facebook (link pending)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.25-1.46 1.5-1.46h1.6V4.5a21 21 0 0 0-2.33-.12c-2.3 0-3.88 1.4-3.88 3.98v2.14H8v3h2.4V21h3.1Z"/></svg></a></li>
-        </ul>
-      </div>
+      <ul class="footer__links">
+        <li><a href="#contact">Media &amp; speaking inquiries</a></li>
+        <li><a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener">Sophia Institute Press</a></li>
+        <li><a href="#contact">LinkedIn</a> <span class="pending">(link pending)</span></li>
+      </ul>
     </div>
-    <p class="footer__word" aria-hidden="true">The Final Gift</p>
     <div class="wrap footer__bottom">
-      <p>© <span data-year>2026</span> Phil Brach · All rights reserved</p>
-      <a href="#top" class="footer__top">Back to top ↑</a>
+      <p>© <span data-year>2026</span> Phil Brach</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 
