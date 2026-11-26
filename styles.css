@@ -2,8 +2,10 @@
    Phil Brach · The Final Gift — homepage mockup
    Quiet, bookish, contemplative. Lots of white space,
    a reading serif throughout, the cover's plum as the
-   only strong colour. No decorative motion: the only
-   transitions are button/link hover states.
+   only strong colour. Motion is gentle and purposeful:
+   sections ease in as you scroll, the cover answers the
+   pointer, the pledge seal settles like a stamp. All of it
+   switches off under prefers-reduced-motion.
    ========================================================= */
 
 :root {
@@ -174,7 +176,25 @@ p + p { margin-top: 1em; }
   display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: center; gap: clamp(48px, 8vw, 120px);
 }
-.hero__book { justify-self: center; width: min(100%, 360px); }
+.hero__book { justify-self: center; width: min(100%, 360px); perspective: 1400px; }
+.hero__book img {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1), box-shadow .7s ease;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero__book:hover { --lift: -10px; }
+  .hero__book:hover img {
+    box-shadow:
+      0 1px 1px rgba(31, 26, 36, .08),
+      0 18px 30px -10px rgba(31, 26, 36, .28),
+      0 50px 80px -34px rgba(31, 26, 36, .5);
+  }
+  /* parish stack: the copies fan out a little */
+  .stack img { transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
+  .stack:hover img:nth-child(1) { transform: translateX(-12px) rotate(-3deg); }
+  .stack:hover img:nth-child(3) { transform: translateX(12px) rotate(3deg); }
+}
 .hero__book img, .stack img {
   border-radius: 1px 3px 3px 1px;
   box-shadow:
@@ -197,6 +217,7 @@ p + p { margin-top: 1em; }
 /* =========================================================
    BLOCK 1 · IDEA IN BRIEF
    ========================================================= */
+#about { padding-top: clamp(64px, 8vw, 112px); }
 #about .measure { text-align: left; }
 
 /* =========================================================
@@ -230,27 +251,43 @@ p + p { margin-top: 1em; }
    BLOCK 3 · PLEDGE
    ========================================================= */
 .pledge {
-  max-width: 880px; margin-inline: auto;
-  padding: clamp(56px, 8vw, 104px) clamp(28px, 6vw, 88px);
-  background: var(--plum); color: #fff; text-align: center;
+  max-width: 1000px; margin-inline: auto;
+  padding: clamp(56px, 7vw, 96px) clamp(28px, 6vw, 88px);
+  background: var(--plum); color: #fff;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center; gap: clamp(40px, 6vw, 80px);
 }
+.pledge .btn { margin-top: 4px; }
+.seal {
+  width: clamp(190px, 20vw, 250px); height: auto;
+  color: #e6d3a0;
+  transform: rotate(-9deg);
+}
+.seal__ring { font-family: var(--sans); font-weight: 600; }
+.seal__top { font-size: 15px; letter-spacing: .2em; }
+.seal__bottom { font-size: 11.5px; letter-spacing: .09em; }
 .pledge__title {
   font: 500 clamp(2.1rem, 4vw, 3.2rem)/1.1 var(--serif);
   font-variation-settings: "opsz" 60; letter-spacing: -.01em;
 }
-.pledge__line { margin-top: 14px; font: italic 400 clamp(1.25rem, 2vw, 1.6rem)/1.4 var(--serif); color: #e6d3a0; }
-.pledge__text { margin: 24px auto 36px; max-width: 32em; color: rgba(255,255,255,.88); }
+.pledge__line { text-wrap: balance; margin-top: 14px; font: italic 400 clamp(1.25rem, 2vw, 1.6rem)/1.4 var(--serif); color: #e6d3a0; }
+.pledge__text { margin: 24px 0 36px; max-width: 30em; color: rgba(255,255,255,.88); }
 
 /* =========================================================
    BLOCK 4 · FOREWORD QUOTE
    ========================================================= */
-.quote-sec { padding-top: 0; }
+.quote-sec { padding-bottom: 0; }
 .quote { text-align: center; }
 .quote blockquote p {
-  font: italic 400 clamp(1.7rem, 3.2vw, 2.5rem)/1.3 var(--serif);
-  letter-spacing: -.01em;
+  margin-inline: auto; max-width: 21ch;
+  font: italic 400 clamp(2.2rem, 5vw, 4rem)/1.18 var(--serif);
+  font-variation-settings: "opsz" 60;
+  letter-spacing: -.015em;
+  text-wrap: balance;
 }
-.quote figcaption { margin-top: 24px; font: 600 15px/1.5 var(--sans); letter-spacing: .02em; }
+.quote figcaption { margin-top: 32px; font: 600 15px/1.5 var(--sans); letter-spacing: .02em; }
+/* short hairline closes the quote and leads into the next block */
+.quote::after { content: ""; display: block; width: 56px; height: 1px; margin: clamp(64px, 8vw, 112px) auto 0; background: var(--gold); opacity: .6; }
 .quote figcaption span { display: block; font-weight: 400; color: var(--muted); }
 .quote .note { margin-inline: auto; text-align: left; }
 
@@ -321,6 +358,27 @@ p + p { margin-top: 1em; }
 .footer__bottom a:hover { text-decoration: underline; }
 
 /* =========================================================
+   SCROLL REVEAL — each block eases up as it enters
+   (only when JS runs; content is visible without it)
+   ========================================================= */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1s ease, transform 1.2s cubic-bezier(.2, .65, .2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+/* the seal lands a beat after the pledge box, like a stamp */
+.js .pledge .seal { opacity: 0; transform: rotate(-2deg) scale(1.18); transition: opacity .5s ease .55s, transform .7s cubic-bezier(.3, 1.4, .5, 1) .55s; }
+.js .pledge.is-in .seal { opacity: 1; transform: rotate(-9deg) scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal], .js .pledge .seal { opacity: 1; transform: none; transition: none; }
+  .js .pledge .seal { transform: rotate(-9deg); }
+  .hero__book img, .stack img { transition: none; transform: none !important; }
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 1000px) {
@@ -336,6 +394,10 @@ p + p { margin-top: 1em; }
   .hero__title { max-width: none; }
   .stack { width: min(80vw, 320px); }
   .portrait { width: min(70vw, 300px); }
+  .pledge { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .pledge__text { margin-inline: auto; }
+  .seal { order: -1; width: 168px; }
+  .pledge .note { text-align: left; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .footer__grid > div:first-child { grid-column: 1 / -1; }
 }
