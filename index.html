@@ -18,6 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..800;1,8..60,300..800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/cover.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -31,9 +32,7 @@
         <ul class="nav__list">
           <li><a href="#book">The Final Gift</a></li>
           <li><a href="#pledge">The Pledge</a></li>
-          <li><a href="#parishes">Bulk Orders</a></li>
           <li><a href="#work">Work with Phil</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -48,9 +47,7 @@
       <ul class="wrap menu__list">
         <li><a href="#book">The Final Gift</a></li>
         <li><a href="#pledge">The Pledge</a></li>
-        <li><a href="#parishes">Bulk Orders</a></li>
         <li><a href="#work">Work with Phil</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li><a href="https://sophiainstitute.com/product/the-final-gift/" target="_blank" rel="noopener" class="btn btn--solid">Preorder the Book</a></li>
       </ul>
     </nav>
@@ -77,18 +74,29 @@
       </div>
     </section>
 
+    <!-- ============ FOREWORD · CARDINAL DOLAN ============ -->
+    <section id="foreword" class="sec sec--white quote-sec" aria-label="From the foreword">
+      <figure class="wrap quote" data-reveal>
+        <blockquote>
+          <p>“The widow’s mite has not been repealed.”</p>
+        </blockquote>
+        <figcaption>Timothy Cardinal Dolan <span>from the foreword to <cite>The Final Gift</cite></span></figcaption>
+        <p class="note">Pending Cardinal Dolan’s approval to use the line on the site. Other endorsements can be added here as they come in.</p>
+      </figure>
+    </section>
+
     <!-- ============ BLOCK 1 · THE IDEA IN BRIEF ============ -->
     <section id="about" class="sec sec--white" aria-label="The idea in brief">
       <div class="wrap measure">
-        <p class="lead">Estate planning may look like paperwork. It is also a chance to decide how the gifts God entrusted to us will keep serving our families, our neighbors, and His Church after we are gone.</p>
-        <p class="body-lg"><cite>The Final Gift</cite> helps you see that planning as an expression of faith, gratitude, and hope: a way to care for those you love, express the values that guide your life, and support the ministries and causes closest to your heart.</p>
+        <p class="lead" data-reveal>Estate planning may look like paperwork. It is also a chance to decide how the gifts God entrusted to us will keep serving our families, our neighbors, and His Church after we are gone.</p>
+        <p class="body-lg" data-reveal style="--d:120ms"><cite>The Final Gift</cite> helps you see that planning as an expression of faith, gratitude, and hope: a way to care for those you love, express the values that guide your life, and support the ministries and causes closest to your heart.</p>
       </div>
     </section>
 
     <!-- ============ BLOCK 2 · BOOK FEATURE ============ -->
     <section id="book" class="sec sec--warm" aria-labelledby="book-title">
       <div class="wrap book__grid">
-        <div class="book__copy">
+        <div class="book__copy" data-reveal>
           <h2 id="book-title" class="h2">The Final Gift</h2>
           <p class="h2__sub">A Spirituality of Estate Gift Planning</p>
           <p>This is not a how-to guide to writing an estate plan. It is a short, accessible book about why planning matters, written for families, parishes, and the people who serve them. Read it in one sitting, discuss it with a group, or keep it beside you as you work with an attorney and financial adviser.</p>
@@ -104,7 +112,7 @@
           <p class="note">“Learn More” will link to the full book page (Page 2). Page count not yet listed.</p>
         </div>
 
-        <aside class="contents" aria-labelledby="inside-title">
+        <aside class="contents" data-reveal style="--d:150ms" aria-labelledby="inside-title">
           <h3 id="inside-title" class="contents__title">Inside the book</h3>
           <ol class="contents__list">
             <li>The first step to estate planning (it’s not what you think)</li>
@@ -120,36 +128,54 @@
     <!-- ============ BLOCK 3 · PLEDGE ============ -->
     <section id="pledge" class="sec sec--white" aria-labelledby="pledge-title">
       <div class="wrap">
-        <div class="pledge">
-          <h2 id="pledge-title" class="pledge__title">The Final Gift Pledge</h2>
-          <p class="pledge__line">Every Catholic has something to give.</p>
-          <p class="pledge__text">The Final Gift Pledge invites you to remember the Church in your estate plans, whatever the size of your gift.</p>
-          <a href="#pledge" class="btn btn--light">Take the Pledge</a>
-          <p class="note note--light">Wording depends on how the pledge works, which Phil has not yet confirmed. A pledge counter or wall can live here later.</p>
+        <div class="pledge" data-reveal>
+          <div class="pledge__body">
+            <h2 id="pledge-title" class="pledge__title">The Final Gift Pledge</h2>
+            <p class="pledge__line">Every Catholic has something to give.</p>
+            <p class="pledge__text">The Final Gift Pledge invites you to remember the Church in your estate plans, whatever the size of your gift.</p>
+            <a href="#pledge" class="btn btn--light">Take the Pledge</a>
+            <p class="note note--light">Wording depends on how the pledge works, which Phil has not yet confirmed. A pledge counter or wall can live here later. The seal can become the pledge’s badge (certificate, email, social).</p>
+          </div>
+
+          <!-- Pledge seal: a pressed stamp, drawn inline so it stays crisp and can be reused -->
+          <svg class="seal" viewBox="0 0 240 240" role="img" aria-labelledby="seal-title">
+            <title id="seal-title">Seal of The Final Gift Pledge</title>
+            <defs>
+              <path id="seal-top" d="M 31,120 A 89,89 0 0,1 209,120"/>
+              <path id="seal-bottom" d="M 22,120 A 98,98 0 0,0 218,120"/>
+              <filter id="seal-ink" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/>
+              </filter>
+            </defs>
+            <g filter="url(#seal-ink)" fill="none" stroke="currentColor">
+              <circle cx="120" cy="120" r="115" stroke-width="2"/>
+              <circle cx="120" cy="120" r="109" stroke-width=".9"/>
+              <circle cx="120" cy="120" r="72" stroke-width=".9"/>
+              <circle cx="120" cy="120" r="66" stroke-width="1.8" stroke-dasharray=".1 5.2" stroke-linecap="round"/>
+              <!-- cross -->
+              <path d="M120 82 V158 M100 106 H140" stroke-width="3.2" stroke-linecap="square"/>
+              <!-- small stars where the two lines meet -->
+              <path d="M17 120 l3 -3 l3 3 l-3 3 z M217 120 l3 -3 l3 3 l-3 3 z" fill="currentColor" stroke="none"/>
+              <g fill="currentColor" stroke="none" class="seal__ring">
+                <text class="seal__top"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">THE FINAL GIFT PLEDGE</textPath></text>
+                <text class="seal__bottom"><textPath href="#seal-bottom" startOffset="50%" text-anchor="middle">EVERY CATHOLIC HAS SOMETHING TO GIVE</textPath></text>
+              </g>
+            </g>
+          </svg>
         </div>
       </div>
-    </section>
-
-    <!-- ============ BLOCK 4 · FOREWORD ============ -->
-    <section id="foreword" class="sec sec--white quote-sec" aria-label="From the foreword">
-      <figure class="wrap measure quote">
-        <blockquote>
-          <p>“The widow’s mite has not been repealed.”</p>
-        </blockquote>
-        <figcaption>Timothy Cardinal Dolan <span>from the foreword to <cite>The Final Gift</cite></span></figcaption>
-        <p class="note">Pending Cardinal Dolan’s approval to use the line on the site. Other endorsements can be added here as they come in.</p>
-      </figure>
     </section>
 
     <!-- ============ PARISHES · BULK ORDERS ============ -->
     <section id="parishes" class="sec sec--warm" aria-labelledby="parishes-title">
       <div class="wrap parishes__grid">
-        <div class="stack" aria-hidden="true">
+        <div class="stack" aria-hidden="true" data-reveal>
           <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
           <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
           <img src="assets/cover.webp" width="800" height="1120" alt="" loading="lazy">
         </div>
-        <div class="parishes__copy">
+        <div class="parishes__copy" data-reveal style="--d:150ms">
           <h2 id="parishes-title" class="h2">Bring <cite>The Final Gift</cite> to your parish</h2>
           <p>Many Catholic institutions encourage planned giving, yet few invite donors to reflect on the deeper spiritual meaning of legacy. Share the book with your community and begin that conversation together.</p>
           <p>A resource for dioceses, parishes, Catholic schools and universities, hospitals, and charitable organizations, and for the pastors, development professionals, financial planners, and attorneys who serve them.</p>
@@ -164,10 +190,10 @@
     <!-- ============ BLOCK 5 · WORK WITH PHIL ============ -->
     <section id="work" class="sec sec--white" aria-labelledby="work-title">
       <div class="wrap work__grid">
-        <div class="portrait" role="img" aria-label="Author photograph forthcoming">
+        <div class="portrait" data-reveal role="img" aria-label="Author photograph forthcoming">
           <span>Author photograph<br>forthcoming</span>
         </div>
-        <div class="work__copy">
+        <div class="work__copy" data-reveal style="--d:150ms">
           <h2 id="work-title" class="h2">Bring Phil to your parish, diocese, school, or ministry.</h2>
           <p>Phil Brach is a Senior Partner at Partners in Mission and has spent more than two decades in Catholic advancement and nonprofit leadership. He helps Catholic organizations invite their communities into thoughtful, faith-filled giving.</p>
           <div class="ctas">
@@ -180,7 +206,7 @@
 
     <!-- ============ EMAIL SIGNUP ============ -->
     <section class="sec sec--warm signup-sec" aria-labelledby="signup-title">
-      <form id="signup" class="wrap measure signup" novalidate>
+      <form id="signup" class="wrap measure signup" novalidate data-reveal>
         <h2 id="signup-title" class="signup__title">Stay in touch.</h2>
         <p>Get updates on <cite>The Final Gift</cite> and the pledge.</p>
         <div class="signup__field">
