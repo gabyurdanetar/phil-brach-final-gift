@@ -1,8 +1,8 @@
 /* =========================================================
    Phil Brach · The Final Gift — interactions
-   Navigation only: mobile menu, header rule on scroll,
-   newsletter form validation, draft-notes toggle.
-   No decorative motion.
+   Mobile menu, header rule on scroll, gentle section reveal,
+   cover tilt on hover, newsletter form validation,
+   draft-notes toggle. Motion respects prefers-reduced-motion.
    ========================================================= */
 (() => {
   "use strict";
@@ -19,6 +19,39 @@
   const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 8);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Gentle reveal as each block enters ---------- */
+  const reveals = document.querySelectorAll("[data-reveal]");
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach((el) => el.classList.add("is-in"));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    reveals.forEach((el) => io.observe(el));
+  }
+
+  /* ---------- Cover leans gently toward the pointer ---------- */
+  const book = $(".hero__book");
+  if (book && !reduce && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    book.addEventListener("pointermove", (e) => {
+      const r = book.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;   // -0.5 … 0.5
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      book.style.setProperty("--ry", `${(x * 10).toFixed(2)}deg`);
+      book.style.setProperty("--rx", `${(-y * 7).toFixed(2)}deg`);
+    });
+    book.addEventListener("pointerleave", () => {
+      book.style.removeProperty("--ry");
+      book.style.removeProperty("--rx");
+    });
+  }
 
   /* ---------- Mobile menu ---------- */
   const burger = $(".burger");
